@@ -8,7 +8,6 @@ mkdir -p "$DB_PATH"
 
 docker run \
   --name delegation-strategy \
-  --user "$UID" \
   --rm \
   --volume "$DB_PATH:/usr/local/db" \
   --env "VALIDATORS_APP_TOKEN=$VALIDATORS_APP_TOKEN" \
@@ -16,7 +15,6 @@ docker run \
 
 docker run \
   --name delegation-strategy \
-  --user "$UID" \
   --rm \
   --volume "$DB_PATH:/usr/local/db" \
   delegation-strategy ./scripts/score-post-process-mainnet
